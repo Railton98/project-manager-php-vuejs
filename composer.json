@@ -1,0 +1,18 @@
+{
+    "name": "tecks/project-manager-php-vuejs",
+    "authors": [
+        {
+            "name": "Railton98",
+            "email": "railtonleal98@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Tecks\\Framework\\": "src"
+      }
+    },
+    "scripts": {
+        "serve": "php -S localhost:9000"
+    }
+}
