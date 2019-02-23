@@ -9,10 +9,11 @@
     "require": {},
     "autoload": {
       "psr-4": {
-        "Tecks\\Framework\\": "src"
+        "Tecks\\Framework\\": "src",
+        "App\\": "app"
       }
     },
     "scripts": {
-        "serve": "php -S localhost:9000"
+        "serve": "php -S localhost:8001 -t public"
     }
 }
