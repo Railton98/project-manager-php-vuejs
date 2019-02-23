@@ -2,9 +2,8 @@
 
 namespace Tecks\Framework;
 
-/**
- *
- */
+use Tecks\Framework\Exceptions\HttpException;
+
 class Router
 {
 	private $routes = [];
@@ -32,7 +31,7 @@ class Router
         $method = strtolower($_SERVER['REQUEST_METHOD']);
 
         if (empty($this->routes[$method])) {
-            return 'Página não encontrada!';
+            throw new HttpException('Page Not Found', 404);
         }
 
         foreach ($this->routes[$method] as $route => $action) {
@@ -40,6 +39,6 @@ class Router
                 return $action($params);
             }
         }
-        return 'Página não encontrada!';
+        throw new HttpException('Page Not Found', 404);
     }
 }
