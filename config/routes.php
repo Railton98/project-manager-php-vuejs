@@ -1,11 +1,17 @@
 <?php
 
-$router->add('GET', '/', function () use ($container) {
-    $db = $container['db'];
-    var_dump($db);
+use App\Models\User;
+
+$router->add('GET', '/', function () {
     return 'estamos na homepage';
 });
 
-$router->add('GET', '/projects/(\d+)', function ($params) {
-    return 'estamos listando o projeto de id: ' . $params[1];
+$router->add('GET', '/users/(\d+)', function ($params) use ($container) {
+    $user = new User($container);
+    $data = $user->get($params[1]);
+
+    if ($data) {
+        return 'Meu nome é: ' . $data['name'];
+    }
+    return 'Usuário não encontrado!';
 });
