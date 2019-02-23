@@ -15,5 +15,8 @@
     },
     "scripts": {
         "serve": "php -S localhost:8001 -t public"
+    },
+    "config": {
+        "process-timeout": 0
     }
 }
